@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rimraf dist",
-    "build": "npm run clean && webpack"
+    "build": "npm run clean && webpack",
+    "start": "webpack-dev-server"
   },
   "keywords": [],
   "author": "",
@@ -23,7 +24,8 @@
     "rimraf": "^2.6.2",
     "style-loader": "^0.18.2",
     "url-loader": "^0.5.9",
-    "webpack": "^3.6.0"
+    "webpack": "^3.6.0",
+    "webpack-dev-server": "^2.8.2"
   },
   "dependencies": {
     "jquery": "^3.2.1"
