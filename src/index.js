@@ -1,6 +1,7 @@
 import "./styles.css";
 
 import sum from "./sum";
+import $ from "jquery/dist/jquery";
 
 const header = document.createElement("h1");
 header.innerText = sum(2,3);
@@ -17,3 +18,7 @@ button.addEventListener('click', () => {
 });
 
 document.body.appendChild(button);
+
+$("h1").click(function () {
+    $(this).hide()
+});

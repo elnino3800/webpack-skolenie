@@ -1,11 +1,19 @@
 const path = require('path');
+var webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
+const VENDOR_LIBS = [
+    'jquery'
+];
+
 const config = {
-    entry: './src/index.js',
+    entry: {
+        bundle: './src/index.js',
+        vendor: VENDOR_LIBS
+    },
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js',
+        filename: '[name].js',
         publicPath: 'dist/'
     },
     module:{
@@ -34,7 +42,10 @@ const config = {
         ]
     },
     plugins: [
-        new ExtractTextPlugin('style.css')
+        new ExtractTextPlugin('style.css'),
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'vendor'
+        })
     ]
 };
 
